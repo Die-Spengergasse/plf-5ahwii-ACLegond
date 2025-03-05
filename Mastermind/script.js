@@ -34,7 +34,7 @@ function init() {
             if (main.mode === "humanGuess") {
                 main.setMode("computerGuess");
                 document.getElementById("toggleModeButton").innerText =
-                    "Mensch rät";
+                    "Spieler-Modus";
             } else {
                 main.setMode("humanGuess");
                 document.getElementById("toggleModeButton").innerText =

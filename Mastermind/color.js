@@ -9,13 +9,13 @@ class Color {
     domObj = null;
 
     static rgbValues = [
-        "#ff0000",
-        "#00ff00",
-        "#0000ff",
-        "#ffff00",
-        "#00ffff",
-        "#ff00ff",
-    ];
+        "#EF5350",
+        "#66BB6A",
+        "#42A5F5",
+        "#FFA726",
+        "#26C6DA",
+        "#AB47BC"
+      ];      
 
     // liefere mir den RGB String für 0 .. 5
     static getRGB(i) {
@@ -33,6 +33,10 @@ class Color {
         this.domObj.classList.add("peg");
         this.domObj.classList.add(`s${num}`);
         this.domObj.addEventListener("click", (e) => {
+            if (main && main.mode === "computerGuess") {
+              main.notify("Im Computer-Modus können Farben nicht geändert werden!");
+              return;
+            }
             e.target.obj.rotate();
         });
     }

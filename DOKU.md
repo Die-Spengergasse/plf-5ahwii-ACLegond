@@ -14,3 +14,8 @@ direkt let col = ""
 Zudem dem Toggle-Button einen Event-Listener hinzugefügt der main.setMOde aufruft.
 
 in code.js, style.css wurde nichts geändert
+
+Neue Änderungen:
+Keine Änderung der Farben möglich wenn der Computer ratet
+UI und Design(CSS) erheblich geändert und scrollbar in guessbox hinzugefügt, sowie weiter Verbesserungen
+
