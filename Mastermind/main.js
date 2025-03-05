@@ -2,6 +2,7 @@
 class Main {
     master = null;
     guesses = null;
+    mode = "humanGuess"; // Standard: Mensch rät
 
     domMasterField = null;
     domGuessesField = null;
@@ -15,6 +16,12 @@ class Main {
 
     newGame() {
         this.initMaster();
+        // Bei "computerGuess" den Master ausblenden, da hier der Mensch nur die Bewertung eingibt
+        if (this.mode === "computerGuess") {
+            this.master.domObj.style.display = "none";
+        } else {
+            this.master.domObj.style.display = "";
+        }
         this.domNotifyBox.value = "";
         this.notify("Neues Spiel gestartet");
         this.initGuesses();
@@ -57,5 +64,11 @@ class Main {
             this.domNotifyBox.value =
                 `${t}: ${arguments[i]}\n` + this.domNotifyBox.value;
         }
+    }
+    
+    setMode(mode) {
+        this.mode = mode;
+        this.notify("Modus geändert: " + mode);
+        this.newGame();
     }
 }

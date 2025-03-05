@@ -28,4 +28,18 @@ function init() {
         document.getElementById("notify")
     );
     main.newGame();
+    document.getElementById("toggleModeButton").addEventListener(
+        "click",
+        () => {
+            if (main.mode === "humanGuess") {
+                main.setMode("computerGuess");
+                document.getElementById("toggleModeButton").innerText =
+                    "Mensch rät";
+            } else {
+                main.setMode("humanGuess");
+                document.getElementById("toggleModeButton").innerText =
+                    "Computer ratet";
+            }
+        },
+    );
 }
